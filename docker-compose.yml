@@ -1,0 +1,15 @@
+# Nous n'avons pas mis la ligne version car docker a dit qu'elle est obsolete
+services:
+  myapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - templates:/app/templates
+    environment:
+      - PYTHONUNBUFFERED=1
+
+volumes:
+  templates:
